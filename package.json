@@ -1,0 +1,23 @@
+{
+  "name": "TorrentsAPI",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" :"nodemon app.js",
+    "start-server" : "node app.js"
+  },
+  "keywords": [],
+  "author": "Ryuk_me",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "yargs": "^16.0.3"
+  },
+  "devDependencies": {},
+  "description": ""
+}
