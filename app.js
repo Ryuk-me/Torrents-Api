@@ -7,6 +7,7 @@ const scrapTorLock = require('./torrent/torLock')
 const scrapEzTVio = require('./torrent/ezTV')
 
 
+
 const app = express();
 
 app.use('/api/:website/:query/:page?', (req, res, next) => {
@@ -116,5 +117,5 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 app.use('/', (req, res) => {
     res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock and EzTvio Unoffical API</h1>');
 });
-
-app.listen(3000);
+const PORT = process.env.PORT || 3001;
+app.listen(PORT);
