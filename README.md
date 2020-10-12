@@ -1,4 +1,4 @@
-# Torrents Api
+# Torrents Api ✨
 
 > API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock and YTS
 
