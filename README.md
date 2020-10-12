@@ -1,7 +1,7 @@
 # Torrents Api ✨
 
 > API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock and YTS
-
+---
 # How to install
 
 ``` bash
@@ -13,13 +13,14 @@ $ git clone https://github.com/Ryuk-me/Torrents-Api
 $ npm start
 
 ```
-
+---
 # How it works
 
 ```
 $ /api/{website name}/{query}/{page(optional)}
 
 ```
+---
 ### Example
 
 ```
@@ -46,6 +47,7 @@ $ /api/1337x/avengers
   }
 ]
 ```
+---
 ```
 $ /api/nyaasi/jujutsu kaisen/2
 ```
@@ -65,7 +67,7 @@ $ /api/nyaasi/jujutsu kaisen/2
   }
 ]
 ```
-
+---
 ## Want to Try api ?
 
 ```
@@ -74,6 +76,9 @@ https://t0rr3nt-api.herokuapp.com/api/{website}/{query}/{page(optional)}
 ```
 https://t0rr3nt-api.herokuapp.com/api/nyaasi/jujutsu kaisen/2
 ```
+---
+#### You can fork the repo and deploy on VPS or deploy it on Heroku :)  
 
-# Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+---
