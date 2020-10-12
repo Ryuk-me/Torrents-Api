@@ -25,6 +25,8 @@ $ /api/{website name}/{query}/{page(optional)}
 ```
 $ /api/1337x/avengers
 ```
+
+```json
 [
   {
     "Name": "Avengers: Infinity War (2018) [BluRay] [720p] [YTS] [YIFY]",
@@ -43,8 +45,6 @@ $ /api/1337x/avengers
     "Url": "https://1337x.to/torrent/3148366/Avengers-Infinity-War-2018-BluRay-720p-YTS-YIFY/"
   }
 ]
-```json
-
 ```
 ```
 $ /api/nyaasi/jujutsu kaisen/2
