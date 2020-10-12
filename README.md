@@ -66,3 +66,14 @@ $ /api/nyaasi/jujutsu kaisen/2
 ]
 ```
 
+## Want to Try api ?
+
+```
+https://t0rr3nt-api.herokuapp.com/api/{website}/{query}/{page(optional)}
+```
+```
+https://t0rr3nt-api.herokuapp.com/api/nyaasi/jujutsu%20kaisen/2
+```
+
+# Deploy
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
