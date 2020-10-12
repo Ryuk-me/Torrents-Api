@@ -1,6 +1,6 @@
 {
     "name": "Torrents APi",
-    "description": "A torrent Scrapping API",
+    "description": "A torrent Scraping API",
     "repository": "https://github.com/Ryuk-me/Torrents-Api",
     "logo": "https://node-js-sample.herokuapp.com/node.png",
     "keywords": ["node", "express", "static","cheerio","axios"]
