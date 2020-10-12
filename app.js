@@ -118,4 +118,5 @@ app.use('/', (req, res) => {
     res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock and EzTvio Unoffical API</h1>');
 });
 const PORT = process.env.PORT || 3001;
+console.log('Listening on PORT : ',PORT);
 app.listen(PORT);
