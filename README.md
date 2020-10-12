@@ -72,7 +72,7 @@ $ /api/nyaasi/jujutsu kaisen/2
 https://t0rr3nt-api.herokuapp.com/api/{website}/{query}/{page(optional)}
 ```
 ```
-https://t0rr3nt-api.herokuapp.com/api/nyaasi/jujutsu%20kaisen/2
+https://t0rr3nt-api.herokuapp.com/api/nyaasi/jujutsu kaisen/2
 ```
 
 # Deploy
