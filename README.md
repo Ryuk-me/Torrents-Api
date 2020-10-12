@@ -4,7 +4,7 @@
 ---
 # How to install
 
-``` bash
+```sh
 
 # Clone the repo
 $ git clone https://github.com/Ryuk-me/Torrents-Api
