@@ -108,7 +108,7 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 
     } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv') {
         return res.json({
-            error: 'please select 1337x | nyaasi | yts'
+            error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv'
         })
     }
 
