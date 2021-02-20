@@ -71,10 +71,10 @@ $ /api/nyaasi/jujutsu kaisen/2
 ## Want to Try api ?
 
 ```
-https://t0rr3nt-api.herokuapp.com/api/{website}/{query}/{page(optional)}
+https://torrenter-api.herokuapp.com/api/{website}/{query}/{page(optional)}
 ```
 ```
-https://t0rr3nt-api.herokuapp.com/api/nyaasi/jujutsu kaisen/2
+https://torrenter-api.herokuapp.com/api/nyaasi/jujutsu kaisen/2
 ```
 ---
 #### You can fork the repo and deploy on VPS or deploy it on Heroku :)  
