@@ -50,7 +50,6 @@ $ /api/1337x/avengers
 ---
 ```
 $ /api/tgx/avengers/1
-
 ```
 ```
 [
