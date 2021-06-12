@@ -7,7 +7,7 @@ async function torrent1337x(query = '', page = '1') {
 
     const allTorrent = []
 
-    const url = 'https://1337x.to/search/' + query + '/' + page + '/';
+    const url = 'https://1337x.st/search/' + query + '/' + page + '/';
     const html = await axios.get(url)
 
     const $ = cheerio.load(html.data)

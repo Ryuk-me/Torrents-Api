@@ -1,10 +1,11 @@
 const express = require('express');
-const scrap1337x = require('./torrent/1337x')
-const scrapNyaa = require('./torrent/nyaaSI')
-const scrapYts = require('./torrent/yts')
-const scrapPirateBay = require('./torrent/pirateBay')
-const scrapTorLock = require('./torrent/torLock')
-const scrapEzTVio = require('./torrent/ezTV')
+const scrap1337x = require('./torrent/1337x');
+const scrapNyaa = require('./torrent/nyaaSI');
+const scrapYts = require('./torrent/yts');
+const scrapPirateBay = require('./torrent/pirateBay');
+const scrapTorLock = require('./torrent/torLock');
+const scrapEzTVio = require('./torrent/ezTV');
+const torrentGalaxy = require('./torrent/torrentGalaxy');
 
 
 
@@ -88,6 +89,19 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 
             })
     }
+    if (website === 'tgx') {
+        torrentGalaxy(query, page)
+            .then((data) => {
+                if (data.length === 0) {
+                    return res.json({
+                        error: 'No search result available for query (' + query + ')'
+                    })
+                } else {
+                    return res.send(data);
+                }
+
+            })
+    }
     if (website === 'nyaasi') {
         if (page > 14) {
             return res.json({
@@ -107,7 +121,7 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
                 })
         }
 
-    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv') {
+    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx') {
         return res.json({
             error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv'
         })
@@ -116,8 +130,8 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 });
 
 app.use('/', (req, res) => {
-    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock and EzTvio Unoffical API</h1>');
+    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio and TorrentGalaxy Unoffical API</h1>');
 });
 const PORT = process.env.PORT || 3001;
-console.log('Listening on PORT : ',PORT);
+console.log('Listening on PORT : ', PORT);
 app.listen(PORT);
