@@ -29,7 +29,7 @@ async function torrentGalaxy(query = '', page = '0') {
         data.Url = "https://torrentgalaxy.to" + $(element).find("a.txlight").attr('href');
         data.TorrentLink = $(element).find(".tgxtablecell.collapsehide.rounded.txlight a").attr("href");
         data.Magnet = $(element).find(".tgxtablecell.collapsehide.rounded.txlight a").next().attr("href");
-        data.UploadedBy = $(element).find('#click span').text();
+        data.UploadedBy = $(element).find(':nth-child(7) span a span').text();
         data.Size = $(element).find(':nth-child(8)').text();
         data.Seeders = $(element).find(':nth-child(11) span font:nth-child(1)').text();
         data.Leechers = $(element).find(':nth-child(11) span font:nth-child(2)').text();
