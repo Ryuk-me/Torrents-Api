@@ -7,13 +7,13 @@ async function torrent1337x(query = '', page = '1') {
 
     const allTorrent = []
 
-    const url = 'https://1337x.am/search/' + query + '/' + page + '/';
+    const url = 'https://1337x.tw/search/' + query + '/' + page + '/';
     const html = await axios.get(url)
 
     const $ = cheerio.load(html.data)
 
     const links = $('td.name').map((_, element) => {
-        var link = 'https://1337x.to' + $(element).find('a').next().attr('href');
+        var link = 'https://1337x.gd' + $(element).find('a').next().attr('href');
         return link;
 
     }).get();
