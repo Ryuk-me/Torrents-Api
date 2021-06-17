@@ -1,6 +1,6 @@
 # Torrents Api ✨
 
-> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock YTS and Torrent Galaxy
+> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS and Torrent Galaxy
 ---
 # How to install
 
@@ -13,6 +13,20 @@ $ git clone https://github.com/Ryuk-me/Torrents-Api
 $ npm start
 
 ```
+
+## Keywords
+
+Website | Keyword
+------------ | -------------
+1337x | 1337x
+Yts   | yts
+Eztv  | eztv
+Torrent Galaxy | tgx
+Torlock | torlock
+PirateBay | piratebay
+Nyaa.si | nyaasi
+
+
 ---
 # How it works
 
