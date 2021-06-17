@@ -5,10 +5,14 @@ const axios = require('axios');
 
 async function torrent1337x(query = '', page = '1') {
 
-    const allTorrent = []
-
+    const allTorrent = [];
+    let html;
     const url = 'https://1337xx.to/search/' + query + '/' + page + '/';
-    const html = await axios.get(url)
+    try{
+        html = await axios.get(url);
+    }catch{
+        return null;
+    }
 
     const $ = cheerio.load(html.data)
 

@@ -3,10 +3,14 @@ const axios = require('axios');
 
 async function torLock(query = '', page = '1') {
 
-    const allTorrent = []
-
-    const url = encodeURI('https://www.torlock.com/all/torrents/' + query + '/' + page + '.html')
-    const html = await axios.get(url)
+    const allTorrent = [];
+    const url = encodeURI('https://www.torlock.com/all/torrents/' + query + '/' + page + '.html');
+    let html;
+    try {
+        html = await axios.get(url);
+    } catch (error) {
+        return null;
+    }
 
     const $ = cheerio.load(html.data)
 

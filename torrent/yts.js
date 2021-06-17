@@ -12,7 +12,13 @@ async function yts(query, page) {
         var url = 'https://yts.mx/browse-movies/' + query + '/720p/all/0/latest/0/all?page=' + page
     }
 
-    const html = await axios.get(url)
+    let html;
+    try{
+        html = await axios.get(url);
+    }catch{
+        return null;
+    }
+    
     const $ = cheerio.load(html.data)
     const div = $('div.browse-movie-bottom')
     const links = div.find('a').map((i, element) => {

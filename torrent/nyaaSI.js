@@ -3,12 +3,18 @@ const axios = require('axios');
 
 
 async function nyaaSI(query, page = '1') {
-    const url = 'https://nyaa.si/?f=0&c=0_0&q=' + query + '&p=' + page
     let torrents = [];
-    const regex = /.comments/gi
-    const nameRegex = /[a-zA-Z\W].+/g
-    const html = await axios.get(url)
-    const $ = cheerio.load(html.data)
+    const url = 'https://nyaa.si/?f=0&c=0_0&q=' + query + '&p=' + page;
+    let html = null;
+    try {
+        html = await axios.get(url);
+    } catch {
+        return null;
+    }
+    const regex = /.comments/gi;
+    const nameRegex = /[a-zA-Z\W].+/g;
+
+    const $ = cheerio.load(html.data);
 
     $('tbody tr').each((_, element) => {
 

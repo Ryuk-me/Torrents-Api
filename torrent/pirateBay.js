@@ -3,10 +3,14 @@ const axios = require('axios')
 
 async function pirateBay(query, page = '1') {
 
-    const allTorrents = []
-    const url = 'https://thehiddenbay.com/search/' + query + '/' + page + '/99/0'
-    const html = await axios.get(url)
-
+    const allTorrents = [];
+    const url = 'https://thehiddenbay.com/search/' + query + '/' + page + '/99/0';
+    let html;
+    try {
+        html = await axios.get(url);
+    } catch {
+        return null;
+    }
     const $ = cheerio.load(html.data)
 
     $("table#searchResult tr").each((_, element) => {

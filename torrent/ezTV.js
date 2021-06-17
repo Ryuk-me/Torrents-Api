@@ -3,9 +3,15 @@ const axios = require('axios');
 
 
 async function ezTV(query) {
-    const url = 'https://eztv.re/search/' + query
     let allTorrents = [];
-    const html = await axios.get(url)
+    const url = 'https://eztv.re/search/' + query;
+    let html;
+    try {
+        html = await axios.get(url);
+    } catch{
+        return null;
+    }
+
     const $ = cheerio.load(html.data)
 
     $('tbody tr').each((_, element) => {

@@ -12,8 +12,13 @@ async function torrentGalaxy(query = '', page = '0') {
     }
     const allTorrents = [];
     const url = "https://torrentgalaxy.to/torrents.php?search=" + query + "&sort=id&order=desc&page=" + page;
-    const html = await axios.get(url);
-
+    let html;
+    try{
+        html = await axios.get(url);
+    }catch{
+        return null;
+    }
+    
     const $ = cheerio.load(html.data);
 
     $('div.tgxtablerow.txlight').each((i, element) => {
