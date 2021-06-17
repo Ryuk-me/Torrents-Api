@@ -11,37 +11,59 @@ async function combo(query, page) {
     let comboTorrent = []
     await torrentGalaxy(query, page)
         .then((data) => {
-            if(data !== null && data.length !==0){
+            if (data !== null && data.length !== 0) {
                 comboTorrent.push(data)
             }
 
         })
+    await torrentGalaxy(query, page)
+        .then((data) => {
+            if (data !== null && data.length !== 0) {
+                comboTorrent.push(data)
+            }
+
+        })
+
+    await scrapNyaa.nyaaSI(query, page)
+        .then((data) => {
+            if (data !== null && data.length !== 0) {
+                comboTorrent.push(data)
+            }
+        })
+
+    await scrapYts.yts(query, page)
+        .then((data) => {
+            if (data !== null && data.length !== 0) {
+                comboTorrent.push(data)
+            }
+        })
+
     await scrapPirateBay.pirateBay(query, page)
         .then((data) => {
-            if(data !== null && data.length !==0){
+            if (data !== null && data.length !== 0) {
                 comboTorrent.push(data)
             }
         })
     await scrapTorLock.torLock(query, page)
         .then((data) => {
-            if(data !== null && data.length !==0){
+            if (data !== null && data.length !== 0) {
                 comboTorrent.push(data)
             }
 
         })
     await scrapEzTVio.ezTV(query)
         .then((data) => {
-            if(data !== null && data.length !==0){
+            if (data !== null && data.length !== 0) {
                 comboTorrent.push(data)
             }
         })
     await scrap1337x.torrent1337x(query, page)
         .then((data) => {
-            if(data !== null && data.length !==0){
+            if (data !== null && data.length !== 0) {
                 comboTorrent.push(data)
             }
         })
-        return comboTorrent;
+    return comboTorrent;
 }
 
 module.exports = combo;

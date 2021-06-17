@@ -164,52 +164,9 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 
     }
     if (website === "all") {
-        // let comboTorrent = []
         combo(query,page).then((data) =>{
             res.send(data);
         })
-        // scrapNyaa.nyaaSI(query, page)
-        //     .then((data) => {
-        //         if (data.length !== 0) {
-        //             comboTorrent.push[data[0]];
-        //         }
-        //     })
-        // torrentGalaxy(query, page)
-        //     .then((data) => {
-        //         if (data.length !== 0) {
-        //             comboTorrent.push(data[0])
-        //         }
-
-        //     })
-        // scrapPirateBay.pirateBay(query, page)
-        //     .then((data) => {
-        //         if (data.length !== 0) {
-        //             comboTorrent.push(data[0]);
-        //         }
-
-        //     })
-        // scrapTorLock.torLock(query, page)
-        //     .then((data) => {
-        //         if (data.length !== 0) {
-        //             comboTorrent.push(data[0])
-        //         }
-
-        //     })
-        // scrapEzTVio.ezTV(query)
-        //     .then((data) => {
-        //         if (data.length !== 0) {
-        //             comboTorrent.push(data[0])
-        //         }
-        //     })
-        // scrap1337x.torrent1337x(query, page)
-        //     .then((data) => {
-        //         if (data.length !== 0) {
-        //             comboTorrent.push(data[0])
-        //         }
-        //     })
-    
-
-        
         
     } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx' && website !== 'all') {
         return res.json({
