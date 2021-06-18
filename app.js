@@ -7,6 +7,7 @@ const scrapTorLock = require('./torrent/torLock');
 const scrapEzTVio = require('./torrent/ezTV');
 const torrentGalaxy = require('./torrent/torrentGalaxy');
 const combo = require('./torrent/COMBO');
+const rargb = require('./torrent/rargb');
 
 const app = express();
 
@@ -137,6 +138,27 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 
             })
     }
+
+    if (website === 'rargb') {
+        rargb(query, page)
+            .then((data) => {
+                if(data === null){
+                    return res.json({
+                        error: 'Website is blocked change IP'
+                    })
+                    
+                }
+                else if (data.length === 0) {
+                    return res.json({
+                        error: 'No search result available for query (' + query + ')'
+                    })
+                } else{
+                    return res.send(data);
+                }
+
+            })
+    }
+
     if (website === 'nyaasi') {
         if (page > 14) {
             return res.json({
@@ -168,16 +190,16 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
             res.send(data);
         })
         
-    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx' && website !== 'all') {
+    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx' && website !== 'all' && website !== "rargb") {
         return res.json({
-            error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv | TorrentGalaxy(tgx)'
+            error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv | TorrentGalaxy(tgx) | rargb'
         })
     }
 
 });
 
 app.use('/', (req, res) => {
-    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio and TorrentGalaxy Unoffical API</h1>');
+    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio , TorrentGalaxy and rargb Unoffical API</h1>');
 });
 const PORT = process.env.PORT || 3001;
 console.log('Listening on PORT : ', PORT);

@@ -5,6 +5,7 @@ const scrapPirateBay = require('./pirateBay');
 const scrapTorLock = require('./torLock');
 const scrapEzTVio = require('./ezTV');
 const torrentGalaxy = require('./torrentGalaxy');
+const rargb = require('./rargb');
 
 
 async function combo(query, page) {
@@ -63,6 +64,14 @@ async function combo(query, page) {
                 comboTorrent.push(data)
             }
         })
+
+    await rargb(query, page)
+        .then((data) => {
+            if (data !== null && data.length !== 0) {
+                comboTorrent.push(data)
+            }
+        })
+
     return comboTorrent;
 }
 
