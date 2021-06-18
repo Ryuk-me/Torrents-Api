@@ -16,16 +16,16 @@ $ npm start
 
 ## Keywords
 
-Website | Keyword
------------- | -------------
-1337x | 1337x
-Yts   | yts
-Eztv  | eztv
-Torrent Galaxy | tgx
-Torlock | torlock
-PirateBay | piratebay
-Nyaa.si | nyaasi
-Rarbg | rarbg
+Website | Keyword | Url
+------------ | ------------- | -------------
+1337x | 1337x | https://1337xx.to
+Yts   | yts | https://yts.mx
+Eztv  | eztv | https://eztv.re
+Torrent Galaxy | tgx | https://torrentgalaxy.to
+Torlock | torlock | https://www.torlock.com
+PirateBay | piratebay | https://thehiddenbay.com
+Nyaa.si | nyaasi | https://nyaa.si
+Rarbg | rarbg  | https://rargb.to
 all | all (it will retrieve torrent from every site)
 
 
