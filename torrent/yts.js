@@ -2,39 +2,51 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 
 
-async function yts(query, page) {
 
-    const allTorrent = []
+async function yts(query, page = '1') {
 
+    let all = []
+    let ALLURL = [];
     if (page === '' || page === '1') {
-        var url = 'https://yts.mx/browse-movies/' + query + '/720p/all/0/latest/0/all?page='
+        var url = "https://yts.mx/browse-movies/" + query + "/all/all/0/latest/0/all"
     } else {
-        var url = 'https://yts.mx/browse-movies/' + query + '/720p/all/0/latest/0/all?page=' + page
+        var url = "https://yts.mx/browse-movies/" + query + "/all/all/0/latest/0/all?page=" + page;
     }
-
     let html;
-    try{
-        html = await axios.get(url);
-    }catch{
+    try {
+        html = await axios.get(url, headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
+        });
+    } catch {
         return null;
     }
-    
-    const $ = cheerio.load(html.data)
-    const div = $('div.browse-movie-bottom')
-    const links = div.find('a').map((i, element) => {
-        const link = $(element).attr('href');
-        return link
-    }).get();
 
-    const labels = ['Dwnload1', 'Download2', 'Download3']
-    await Promise.all(links.map(async (element) => {
-        const data = {}
+    const $ = cheerio.load(html.data);
+    $('div.browse-movie-bottom').each((_, element) => {
+        let url = $(element).find('a').attr('href');
+        ALLURL.push(url);
+    })
+
+    await Promise.all(ALLURL.map(async (url) => {
+        const data = {
+            'Name': null,
+            'ReleasedDate': null,
+            'Genre': null,
+            'Rating': null,
+            'Likes': null,
+            'Runtime': null,
+            'Language': null,
+            'Url': null,
+            'Poster': null,
+            'Files': []
+        };
         let html;
-        try{
-            html = await axios.get(element);
-        }catch{
-            return null;
+        try {
+            html = await axios.get(url);
+        } catch {
+            return;
         }
+
         const $ = cheerio.load(html.data);
 
         data['Name'] = $('div.hidden-xs').find('h1').text();
@@ -44,27 +56,29 @@ async function yts(query, page) {
         data['Likes'] = $('div.bottom-info div.rating-row').eq(0).find('span').eq(1).text()
         data['Runtime'] = $('div .tech-spec-info').find('div .row').eq(1).find('div .tech-spec-element').eq(2).text().trim();
         data['Language'] = $('div .tech-spec-info').find('div .row').eq(0).find('div .tech-spec-element').eq(2).text().trim();
-        data['Url'] = element;
+        data['Url'] = url;
         data['Poster'] = $('div #movie-poster').eq(0).find('img').attr('src');
 
-        $('div #movie-info p.hidden-xs a').each((i, element) => {
-            data[labels[i]] = $(element).attr('href')
-        })
+        $('.modal-download > div:nth-child(1) div.modal-content').each((i, el) => {
+            $('div.modal-torrent').each((_, ele) => {
+                let files = {};
+                files.Quality = $(ele).find(':nth-child(1) >span').text();;
+                files.Size = $(ele).find(':nth-child(5)').text();
+                files.Torrent = $(ele).find(':nth-child(6)').attr('href');
+                files.Magnet = $(ele).find(':nth-child(7)').attr('href');
 
-        clean(data);
-        allTorrent.push(data);
+                data.Files.push(files);
+            })
+
+
+        })
+        all.push(data);
     }))
 
-    return allTorrent;
-}
+    return all;
 
-function clean(obj) {
-    for (var propName in obj) {
-        if (String(obj[propName]).startsWith('https://yifysubtitles') === true || obj[propName] === '' || obj[propName] === null || obj[propName] === undefined) {
-            delete obj[propName];
-        }
-    }
-    return obj
+
+
 }
 
 
