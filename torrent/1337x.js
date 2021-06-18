@@ -27,9 +27,13 @@ async function torrent1337x(query = '', page = '1') {
 
         const data = {};
         const labels = ['Category', 'Type', 'Language', 'Size', 'UploadedBy', 'Downloads', 'LastChecked', 'DateUploaded', 'Seeders', 'Leechers'];
-        const html = await axios.get(element);
+        let html;
+        try{
+            html = await axios.get(element);
+        }catch{
+            return null;
+        }
         const $ = cheerio.load(html.data);
-
         data.Name = $('.box-info-heading h1').text().trim();
         data.Magnet = $('.clearfix ul li a').attr('href') || "";
         const poster = ("https:" + $('div.torrent-image img').attr('src'));

@@ -24,8 +24,12 @@ async function torLock(query = '', page = '1') {
 
 
     await Promise.all(links.map(async (url) => {
-
-        const html = await axios.get(url);
+        let html;
+        try {
+            html = await axios.get(url);
+        } catch {
+            return null;
+        }
         const $ = cheerio.load(html.data);
 
         const name = $('dl.dl-horizontal').find('dd').eq(0).text().replace(/.torrent/gi, '').trim() || 'Not Available'

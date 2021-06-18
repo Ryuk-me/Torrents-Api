@@ -29,7 +29,12 @@ async function yts(query, page) {
     const labels = ['Dwnload1', 'Download2', 'Download3']
     await Promise.all(links.map(async (element) => {
         const data = {}
-        const html = await axios.get(element);
+        let html;
+        try{
+            html = await axios.get(element);
+        }catch{
+            return null;
+        }
         const $ = cheerio.load(html.data);
 
         data['Name'] = $('div.hidden-xs').find('h1').text();
