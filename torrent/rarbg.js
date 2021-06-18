@@ -2,7 +2,7 @@ const cheerio = require('cheerio')
 const axios = require('axios')
 
 
-async function rargb(query, page = '1') {
+async function rarbg(query, page = '1') {
     const ALLURLARRAY = [];
     var ALLTORRENT = [];
     const url = "https://rargb.to/search/" + page + "/?search=" + query;
@@ -63,4 +63,4 @@ async function rargb(query, page = '1') {
     }))
     return ALLTORRENT;
 }
-module.exports = rargb;
+module.exports = rarbg;
