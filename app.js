@@ -7,7 +7,7 @@ const scrapTorLock = require('./torrent/torLock');
 const scrapEzTVio = require('./torrent/ezTV');
 const torrentGalaxy = require('./torrent/torrentGalaxy');
 const combo = require('./torrent/COMBO');
-const rargb = require('./torrent/rargb');
+const rarbg = require('./torrent/rarbg');
 
 const app = express();
 
@@ -139,8 +139,8 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
             })
     }
 
-    if (website === 'rargb') {
-        rargb(query, page)
+    if (website === 'rarbg') {
+        rarbg(query, page)
             .then((data) => {
                 if(data === null){
                     return res.json({
@@ -190,16 +190,16 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
             res.send(data);
         })
         
-    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx' && website !== 'all' && website !== "rargb") {
+    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx' && website !== 'all' && website !== "rarbg") {
         return res.json({
-            error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv | TorrentGalaxy(tgx) | rargb'
+            error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv | TorrentGalaxy(tgx) | rarbg'
         })
     }
 
 });
 
 app.use('/', (req, res) => {
-    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio , TorrentGalaxy and rargb Unoffical API</h1>');
+    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio , TorrentGalaxy and rarbg Unoffical API</h1>');
 });
 const PORT = process.env.PORT || 3001;
 console.log('Listening on PORT : ', PORT);
