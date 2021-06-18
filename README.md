@@ -13,23 +13,8 @@ $ git clone https://github.com/Ryuk-me/Torrents-Api
 $ npm start
 
 ```
-
-## Keywords
-
-Website | Keyword | Url
------------- | ------------- | -------------
-1337x | 1337x | https://1337xx.to
-Yts   | yts | https://yts.mx
-Eztv  | eztv | https://eztv.re
-Torrent Galaxy | tgx | https://torrentgalaxy.to
-Torlock | torlock | https://www.torlock.com
-PirateBay | piratebay | https://thehiddenbay.com
-Nyaa.si | nyaasi | https://nyaa.si
-Rarbg | rarbg  | https://rargb.to
-all | all (it will retrieve torrent from every site)
-
-
 ---
+
 # How it works
 
 ```
@@ -37,6 +22,22 @@ $ /api/{website name}/{query}/{page(optional)}
 
 ```
 ---
+
+## Keywords
+
+Website | Keyword | Url | Example
+------------ | ------------- | ------------- | -------------
+1337x | 1337x | https://1337xx.to | [/api/1337x/avengers](https://torrenter-api.herokuapp.com/api/1337x/avengers)
+Yts   | yts | https://yts.mx | [/api/yts/avengers](https://torrenter-api.herokuapp.com/api/yts/avengers)
+Eztv  | eztv | https://eztv.re | [/api/eztv/avengers](https://torrenter-api.herokuapp.com/api/eztv/avengers)
+Torrent Galaxy | tgx | https://torrentgalaxy.to | [/api/tgx/avengers](https://torrenter-api.herokuapp.com/api/tgx/avengers)
+Torlock | torlock | https://www.torlock.com | [/api/torlock/avengers](https://torrenter-api.herokuapp.com/api/torlock/avengers)
+PirateBay | piratebay | https://thehiddenbay.com | [/api/piratebay/avengers](https://torrenter-api.herokuapp.com/api/piratebay/avengers)
+Nyaa.si | nyaasi | https://nyaa.si | [/api/nyaa/umaru](https://torrenter-api.herokuapp.com/api/nyaa/umaru)
+Rarbg | rarbg  | https://rargb.to | [/api/rarbg/avengers](https://torrenter-api.herokuapp.com/api/rargb/avengers)
+all | all (it will retrieve torrent from every site) | | [/api/all](https://torrenter-api.herokuapp.com/api/all/avengers)
+
+
 ### Example
 
 ```
