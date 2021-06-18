@@ -26,7 +26,7 @@ async function ezTV(query) {
                 'Seeds': $(element).find('td').eq(5).text() || '',
                 'Url': "https://eztv.io" + url,
                 'Torrent': $(element).find('td').eq(2).find('a').eq(1).attr('href'),
-                'Mangnet': $(element).find('td').eq(2).find('a').attr('href')
+                'Magnet': $(element).find('td').eq(2).find('a').attr('href')
             }
             allTorrents.push(torrent)
         }
