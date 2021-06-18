@@ -25,7 +25,7 @@ Torrent Galaxy | tgx
 Torlock | torlock
 PirateBay | piratebay
 Nyaa.si | nyaasi
-Rargb | rargb
+Rargb | rarbg
 all | all (it will retrieve torrent from every site)
 
 
