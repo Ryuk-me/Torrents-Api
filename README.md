@@ -1,6 +1,6 @@
 # Torrents Api ✨
 
-> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS and Torrent Galaxy
+> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS , Torrent Galaxy and Rargb
 ---
 # How to install
 
@@ -25,6 +25,7 @@ Torrent Galaxy | tgx
 Torlock | torlock
 PirateBay | piratebay
 Nyaa.si | nyaasi
+Rargb | rargb
 all | all (it will retrieve torrent from every site)
 
 
