@@ -22,8 +22,8 @@ async function ezTV(query) {
             let torrent = {
                 'Name': name,
                 'Size': $(element).find('td').eq(3).text(),
-                'Date': $(element).find('td').eq(4).text(),
-                'Seeds': $(element).find('td').eq(5).text() || '',
+                'DateUploaded': $(element).find('td').eq(4).text(),
+                'Seeders': $(element).find('td').eq(5).text() || '',
                 'Url': "https://eztv.io" + url,
                 'Torrent': $(element).find('td').eq(2).find('a').eq(1).attr('href'),
                 'Magnet': $(element).find('td').eq(2).find('a').attr('href')

@@ -22,7 +22,7 @@ async function pirateBay(query, page = '1') {
         const torrent = {
             Name: $(element).find('a.detLink').text(),
             Size: size,
-            Date: date,
+            DateUploaded: date,
             Category: $(element).find('td.vertTh center a').eq(0).text(),
             Seeders: $(element).find('td').eq(2).text(),
             Leechers: $(element).find('td').eq(3).text(),

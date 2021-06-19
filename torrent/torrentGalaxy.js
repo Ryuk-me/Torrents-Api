@@ -38,7 +38,7 @@ async function torrentGalaxy(query = '', page = '0') {
         data.Size = $(element).find(':nth-child(8)').text();
         data.Seeders = $(element).find(':nth-child(11) span font:nth-child(1)').text();
         data.Leechers = $(element).find(':nth-child(11) span font:nth-child(2)').text();
-        data.Date = $(element).find(":nth-child(12)").text();
+        data.DateUploaded = $(element).find(":nth-child(12)").text();
         allTorrents.push(data);
     })
     return allTorrents;

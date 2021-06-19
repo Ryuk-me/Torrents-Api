@@ -47,7 +47,7 @@ async function torLock(query = '', page = '1') {
             'Name': name,
             'Category': category,
             'Size': size,
-            'UploadDate': date,
+            'DateUploaded': date,
             'Seeds': seeder,
             'Peers': peers,
             'Uploader': uploader,
