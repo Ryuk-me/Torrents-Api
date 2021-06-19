@@ -23,9 +23,9 @@ async function nyaaSI(query, page = '1') {
         const $find = $(element);
         $find.each((_, element) => {
             const td = $(element).children('td');
-            data.Category = $(element).find('a').attr('title')
-            data.Name = $(element).find('td[colspan="2"] a').text().trim().match(nameRegex)[0]
-            data.Url = ('https://nyaa.si' + $(element).find('td[colspan="2"] a').attr('href')).replace(regex, '')
+            data.Name = $(element).find('td[colspan="2"] a').text().trim().match(nameRegex)[0];
+            data.Category = $(element).find('a').attr('title');
+            data.Url = ('https://nyaa.si' + $(element).find('td[colspan="2"] a').attr('href')).replace(regex, '');
 
             $find.each((_, element) => {
                 data.Size = $(td).eq(3).text();

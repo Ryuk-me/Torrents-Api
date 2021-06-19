@@ -22,8 +22,6 @@ async function rarbg(query, page = '1') {
         $('tr.lista2').each((_, el) => {
             const data = {};
             const td = $(el).children('td');
-            data.Url = "https://rargb.to" + $(td).eq(1).find('a').attr('href');
-            ALLURLARRAY.push(data.Url);
             data.Name = $(td).eq(1).find('a').attr('title');
             data.Category = $(td).eq(2).find('a').text();
             data.DateUploaded = $(td).eq(3).text();
@@ -31,6 +29,8 @@ async function rarbg(query, page = '1') {
             data.Seeders = $(td).eq(5).find('font').text();
             data.Leechers = $(td).eq(6).text();
             data.UploadedBy = $(td).eq(7).text();
+            data.Url = "https://rargb.to" + $(td).eq(1).find('a').attr('href');
+            ALLURLARRAY.push(data.Url);
             ALLTORRENT.push(data);
 
         })
