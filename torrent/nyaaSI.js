@@ -31,8 +31,8 @@ async function nyaaSI(query, page = '1') {
                 data.TorrentLink = 'https://nyaa.si' + $(element).find('.text-center a').attr('href')
                 data.Size = $(td).eq(3).text();
                 data.DateUploaded = $(td).eq(4).text();
-                data.Seeder = $(td).eq(5).text();
-                data.Leecher = $(td).eq(6).text();
+                data.Seeders = $(td).eq(5).text();
+                data.Leechers = $(td).eq(6).text();
                 data.Downloads = $(td).eq(7).text();
                 data.Magnet = $(element).find('.text-center a').next().attr('href')
             })

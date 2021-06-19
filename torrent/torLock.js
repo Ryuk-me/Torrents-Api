@@ -48,11 +48,11 @@ async function torLock(query = '', page = '1') {
             'Category': category,
             'Size': size,
             'DateUploaded': date,
-            'Seeds': seeder,
-            'Peers': peers,
-            'Uploader': uploader,
-            'Torrent': torrentFile,
+            'Seeders': seeder,
+            'Leechers': peers,
+            'UploadedBy': uploader,
             'Url': url,
+            'Torrent': torrentFile,
             'Magnet': magnet
 
         }
