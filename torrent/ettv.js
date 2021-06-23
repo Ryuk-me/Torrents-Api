@@ -26,9 +26,9 @@ async function ettvCentral(query, page = '0') {
             data.Category = $(td).eq(0).find('a img').attr('title');
             data.DateUploaded = $(td).eq(2).text();
             data.Size = $(td).eq(3).text();
-            data.Seeders = $(td).eq(4).text();
-            data.Leechers = $(td).eq(5).text();
-            data.UploadedBy = $(td).eq(6).text();
+            data.Seeders = $(td).eq(5).text();
+            data.Leechers = $(td).eq(6).text();
+            data.UploadedBy = $(td).eq(7).text();
             data.Url = "https://www.ettvcentral.com" + $(td).eq(1).find('a').attr('href');
             if (data.Name !== "") {
                 ALLURLARRAY.push(data.Url);
