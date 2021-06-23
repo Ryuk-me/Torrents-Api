@@ -1,6 +1,6 @@
 # Torrents Api ✨
 
-> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS , Torrent Galaxy and Rarbg
+> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS , Torrent Galaxy , Rarbg and Ettv
 ---
 # How to install
 
@@ -35,6 +35,7 @@ Torlock | torlock | https://www.torlock.com | [/api/torlock/avengers](https://to
 PirateBay | piratebay | https://thehiddenbay.com | [/api/piratebay/avengers](https://torrenter-api.herokuapp.com/api/piratebay/avengers)
 Nyaa.si | nyaasi | https://nyaa.si | [/api/nyaa/umaru](https://torrenter-api.herokuapp.com/api/nyaa/umaru)
 Rarbg | rarbg  | https://rargb.to | [/api/rarbg/avengers](https://torrenter-api.herokuapp.com/api/rargb/avengers)
+Ettv | ettv  | https://rargb.to | [/api/ettv/avengers](https://torrenter-api.herokuapp.com/api/ettv/avengers)
 all | all (it will retrieve torrent from every site) | | [/api/all](https://torrenter-api.herokuapp.com/api/all/avengers)
 
 
