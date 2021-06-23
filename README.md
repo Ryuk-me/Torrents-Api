@@ -35,7 +35,7 @@ Torlock | torlock | https://www.torlock.com | [/api/torlock/avengers](https://to
 PirateBay | piratebay | https://thehiddenbay.com | [/api/piratebay/avengers](https://torrenter-api.herokuapp.com/api/piratebay/avengers)
 Nyaa.si | nyaasi | https://nyaa.si | [/api/nyaa/umaru](https://torrenter-api.herokuapp.com/api/nyaa/umaru)
 Rarbg | rarbg  | https://rargb.to | [/api/rarbg/avengers](https://torrenter-api.herokuapp.com/api/rargb/avengers)
-Ettv | ettv  | https://rargb.to | [/api/ettv/avengers](https://torrenter-api.herokuapp.com/api/ettv/avengers)
+Ettv | ettv  | https://www.ettvcentral.com | [/api/ettv/avengers](https://torrenter-api.herokuapp.com/api/ettv/avengers)
 all | all (it will retrieve torrent from every site) | | [/api/all](https://torrenter-api.herokuapp.com/api/all/avengers)
 
 
@@ -96,13 +96,13 @@ $ /api/nyaasi/jujutsu kaisen/2
 [
   {
     "Category": "Anime - English-translated",
-    "name": "[ok] JUJUTSU KAISEN - 01 [Multi-Subs] [1080p].mkv",
+    "Name": "[ok] JUJUTSU KAISEN - 01 [Multi-Subs] [1080p].mkv",
     "Url": "https://nyaa.si/view/1285645",
-    "TorrentLink": "https://nyaa.si/download/1285645.torrent",
+    "Torrent": "https://nyaa.si/download/1285645.torrent",
     "Size": "1.4 GiB",
-    "Date": "2020-10-02 17:48",
-    "Seeder": "25",
-    "Leecher": "0",
+    "DateUploaded": "2020-10-02 17:48",
+    "Seeders": "25",
+    "Leechers": "0",
     "Downloads": "710",
     "Magnet": "magnet:?xt=urn:btih:986f957243b697d238108d1fa0ba1d0de6d602aa&dn=%5Bok%5D%20JUJUTSU%20KAISEN%20-%2001%20%5BMulti-Subs%5D%20%5B1080p%5D.mkv&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce"
   }
