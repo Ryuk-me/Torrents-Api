@@ -76,13 +76,13 @@ $ /api/tgx/avengers/1
     "Category": "Movies : HD",
     "Name": "Avengers.Endgame.2019.Open.Matte.Upscaled.BDRip.2160p.Eng.TrueHD.DD5.1.gerald99",
     "Url": "https://torrentgalaxy.to/torrent/14346596/Avengers-Endgame-2019-Open-Matte-Upscaled-BDRip-2160p-Eng-TrueHD-DD5-1-gerald99",
-    "TorrentLink": "https://watercache.nanobytes.org/get/925d6bbd7faf6a3525aa3adcd0d8b560a671f3e6/Avengers.Endgame.2019.Open.Matte.Upscaled.BDRip.2160p.Eng.TrueHD.DD5.1.gerald99",
+    "Torrent": "https://watercache.nanobytes.org/get/925d6bbd7faf6a3525aa3adcd0d8b560a671f3e6/Avengers.Endgame.2019.Open.Matte.Upscaled.BDRip.2160p.Eng.TrueHD.DD5.1.gerald99",
     "Magnet": "magnet:?xt=urn:btih:925d6bbd7faf6a3525aa3adcd0d8b560a671f3e6&dn=Avengers.Endgame.2019.Open.Matte.Upscaled.BDRip.2160p.Eng.TrueHD.DD5.1.gerald99&tr=udp%3A%2F%2Ftracker.tiny-vps.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ffasttracker.foreverpirates.co%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&tr=udp%3A%2F%2Fipv4.tracker.harry.lu%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.uw0.xyz%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.dler.org%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2710%2Fannounce",
     "UploadedBy": "gerald99",
     "Size": "34.62 GB",
     "Seeders": "6",
     "Leechers": "7",
-    "Date": "10/04/21 10:46"
+    "DateUploaded": "10/04/21 10:46"
   }
  
  ]
