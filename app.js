@@ -8,7 +8,7 @@ const scrapEzTVio = require('./torrent/ezTV');
 const torrentGalaxy = require('./torrent/torrentGalaxy');
 const combo = require('./torrent/COMBO');
 const rarbg = require('./torrent/rarbg');
-const ettv = require('./torrent/ettv');
+const ettvCentral = require('./torrent/ettv');
 
 const app = express();
 
@@ -179,7 +179,7 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 
     }
     if (website === "ettv") {
-        ettv(query, page)
+        ettvCentral(query, page)
             .then((data) => {
                 if (data === null) {
                     return res.json({
