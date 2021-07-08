@@ -36,7 +36,7 @@ PirateBay | piratebay | https://thehiddenbay.com | [/api/piratebay/avengers](htt
 Nyaa.si | nyaasi | https://nyaa.si | [/api/nyaa/umaru](https://torrenter-api.herokuapp.com/api/nyaa/umaru)
 Rarbg | rarbg  | https://rargb.to | [/api/rarbg/avengers](https://torrenter-api.herokuapp.com/api/rargb/avengers)
 Ettv | ettv  | https://www.ettvcentral.com | [/api/ettv/avengers](https://torrenter-api.herokuapp.com/api/ettv/avengers)
-all | all (it will retrieve torrent from every site) | | [/api/all](https://torrenter-api.herokuapp.com/api/all/avengers)
+all | all (it will retrieve torrent from every site) | | [/api/all/avengers](https://torrenter-api.herokuapp.com/api/all/avengers)
 
 
 ### Example
