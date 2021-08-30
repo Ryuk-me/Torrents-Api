@@ -118,8 +118,10 @@ https://torrenter-api.herokuapp.com/api/{website}/{query}/{page(optional)}
 https://torrenter-api.herokuapp.com/api/nyaasi/jujutsu kaisen/2
 ```
 ---
-#### You can fork the repo and deploy on VPS or deploy it on Heroku :)  
+#### You can fork the repo and deploy on VPS or deploy it on Heroku and Replit :)  
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+[![Run on Replit](https://repl.it/badge/github/Ryuk-me/Torrents-Api)](https://github.com/Ryuk-me/Torrents-Api/blob/master/Replit.md)
 
 ---
