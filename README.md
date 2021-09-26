@@ -33,8 +33,8 @@ Eztv  | eztv | https://eztv.re | [/api/eztv/avengers](https://torrents-api.ryukm
 Torrent Galaxy | tgx | https://torrentgalaxy.to | [/api/tgx/avengers](https://torrents-api.ryukme.repl.co/api/tgx/avengers)
 Torlock | torlock | https://www.torlock.com | [/api/torlock/avengers](https://torrents-api.ryukme.repl.co/api/torlock/avengers)
 PirateBay | piratebay | https://thehiddenbay.com | [/api/piratebay/avengers](https://torrents-api.ryukme.repl.co/api/piratebay/avengers)
-Nyaa.si | nyaasi | https://nyaa.si | [/api/nyaa/umaru](https://torrents-api.ryukme.repl.co/api/nyaa/umaru)
-Rarbg | rarbg  | https://rargb.to | [/api/rarbg/avengers](https://torrents-api.ryukme.repl.co/api/rargb/avengers)
+Nyaa.si | nyaasi | https://nyaa.si | [/api/nyaasi/umaru](https://torrents-api.ryukme.repl.co/api/nyaasi/umaru)
+Rarbg | rarbg  | https://rargb.to | [/api/rarbg/avengers](https://torrents-api.ryukme.repl.co/api/rarbg/avengers)
 Ettv | ettv  | https://www.ettvcentral.com | [/api/ettv/avengers](https://torrents-api.ryukme.repl.co/api/ettv/avengers)
 all | all (it will retrieve torrent from every site) | | [/api/all/avengers](https://torrents-api.ryukme.repl.co/api/all/avengers)
 
