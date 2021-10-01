@@ -36,10 +36,15 @@ async function torrent1337x(query = '', page = '1') {
         const $ = cheerio.load(html.data);
         data.Name = $('.box-info-heading h1').text().trim();
         data.Magnet = $('.clearfix ul li a').attr('href') || "";
-        const poster = ("https:" + $('div.torrent-image img').attr('src'));
+        const poster = $('div.torrent-image img').attr('src');
         
-        if (poster !== 'https:undefined') {
-            data.Poster = poster
+        if (typeof poster !== 'undefined') {
+            if (poster.startsWith('http')){
+                data.Poster = poster;
+            }
+            else{
+                data.Poster = 'https:' + poster;
+            }
         } else {
             data.Poster = ''
         }
