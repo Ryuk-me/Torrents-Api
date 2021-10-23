@@ -71,7 +71,7 @@ $ /api/tgx/avengers/1
 ```
 ```
 [
-  
+  {
     "Poster": "https://img.picturegalaxy.org/data/cover/h/W/hWOmQgIu5E.jpg",
     "Category": "Movies : HD",
     "Name": "Avengers.Endgame.2019.Open.Matte.Upscaled.BDRip.2160p.Eng.TrueHD.DD5.1.gerald99",
