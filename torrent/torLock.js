@@ -34,13 +34,14 @@ async function torLock(query = '', page = '1') {
 
         const name = $('dl.dl-horizontal').find('dd').eq(0).text().replace(/.torrent/gi, '').trim() || 'Not Available'
         const category = $('dl.dl-horizontal').find('dd').eq(1).text().trim() || ''
-        const torrentFile = 'https://www.torlock.com' + $('div.well').find('a[href^="/tor"]').attr('href')
-        const magnet = $('thead').find('a[href^="magnet"]').attr('href')
-        const size = $('dl.dl-horizontal').find('dd').eq(3).text().trim().match(/.*B/gi)[0];
-        const date = $('dl.dl-horizontal').find('dd').eq(4).text().trim().match(/\d(.-*?)\d/gi).join('')
-        const uploader = $('dl.dl-horizontal').find('dd').eq(4).text().trim().match(/"(.*?)"/g)[0].split('\"')[1]
-        const seeder = $('dl.dl-horizontal').find('dd').eq(5).text().split('&').map(i => i.trim().split(' '))[0][0]
-        const peers = $('dl.dl-horizontal').find('dd').eq(5).text().split('&').map(i => i.trim().split(' '))[1][0]
+        // const torrentFile = 'https://www.torlock.com' + $('div.well').find('a[href^="/tor"]').attr('href')
+        const torrentFile = $("body > article > div:nth-child(6) > div > div:nth-child(2) > a").attr('href') || ""
+        const magnet = $('thead').find('a[href^="magnet"]').attr('href') || ""
+        const size = $('dl.dl-horizontal').find('dd').eq(3).text().trim().match(/.*B/gi)[0] || "" 
+        const date = $('dl.dl-horizontal').find('dd').eq(4).text().trim().match(/\d(.-*?)\d/gi).join('') || ""
+        const uploader = $('dl.dl-horizontal').find('dd').eq(4).text().trim().match(/"(.*?)"/g)[0].split('\"')[1] || ""
+        const seeder = $('dl.dl-horizontal').find('dd').eq(5).text().split('&').map(i => i.trim().split(' '))[0][0] || ""
+        const peers = $('dl.dl-horizontal').find('dd').eq(5).text().split('&').map(i => i.trim().split(' '))[1][0] || ""
 
 
         let torrent = {
