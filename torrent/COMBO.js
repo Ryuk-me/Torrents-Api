@@ -6,6 +6,7 @@ const scrapTorLock = require('./torLock');
 const scrapEzTVio = require('./ezTV');
 const torrentGalaxy = require('./torrentGalaxy');
 const rarbg = require('./rarbg');
+const zooqle = require('./zooqle');
 
 async function combo(query, page) {
     let comboTorrent = []
@@ -17,9 +18,11 @@ async function combo(query, page) {
             scrapTorLock.torLock(query, page),
             scrapEzTVio.ezTV(query),
             scrap1337x.torrent1337x(query, page),
-            rarbg(query, page)
+            rarbg(query, page),
+            zooqle.zooqle(query, page),
+
         ])
-        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg]) => {
+        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql]) => {
 
             if (tgx !== null && tgx.length > 0) {
                 comboTorrent.push(tgx);
@@ -44,6 +47,9 @@ async function combo(query, page) {
             }
             if (rarbg !== null && rarbg.length > 0) {
                 comboTorrent.push(rarbg);
+            }
+            if (zql !== null && zql.length > 0) {
+                comboTorrent.push(zql);
             }
         })
     return comboTorrent;
