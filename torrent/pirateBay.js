@@ -17,7 +17,7 @@ async function pirateBay(query, page = '1') {
         const data = $(element).find('font.detDesc').text().replace(/(Size|Uploaded)/gi, '').replace(/ULed/gi, 'Uploaded').split(',').map(value => value.trim());
         const date = data[0]
         const size = data[1]
-        const uploader = data[2]
+        const uploader = $(element).find('font.detDesc a').text()
 
         const torrent = {
             Name: $(element).find('a.detLink').text(),
