@@ -8,6 +8,8 @@ const torrentGalaxy = require('./torrentGalaxy');
 const rarbg = require('./rarbg');
 const zooqle = require('./zooqle');
 const kickAss = require('./kickAss');
+const bitSearch = require('./bitSearch');
+
 
 async function combo(query, page) {
     let comboTorrent = []
@@ -22,9 +24,10 @@ async function combo(query, page) {
             rarbg(query, page),
             zooqle.zooqle(query, page),
             kickAss(query, page),
+            bitSearch(query, page),
 
         ])
-        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql, kick]) => {
+        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql, kick, bts]) => {
 
             if (tgx !== null && tgx.length > 0) {
                 comboTorrent.push(tgx);
@@ -55,6 +58,9 @@ async function combo(query, page) {
             }
             if (kick !== null && kick.length > 0) {
                 comboTorrent.push(kick);
+            }
+            if (bts !== null && bts.length > 0) {
+                comboTorrent.push(bts);
             }
         })
     return comboTorrent;
