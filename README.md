@@ -39,7 +39,11 @@ Ettv | ettv  | https://www.ettvcentral.com | [/api/ettv/avengers](https://torren
 Zooqle | zooqle  | https://zooqle.com | [/api/zooqle/avengers](https://torrents-api.ryukme.repl.co/api/zooqle/avengers)
 KickAss | kickass  | https://kickasstorrents.to | [/api/kickass/avengers](https://torrents-api.ryukme.repl.co/api/kickass/avengers)
 Bitsearch | bitsearch  | https://bitsearch.to | [/api/bitsearch/avengers](https://torrents-api.ryukme.repl.co/api/bitsearch/avengers)
+<<<<<<< HEAD
 Glodls | glodls  | https://glodls.to/home.php | [/api/glodls/avengers](https://torrents-api.ryukme.repl.co/api/glodls/avengers)
+=======
+Glodls | bitsearch  | https://glodls.to/home.php | [/api/glodls/avengers](https://torrents-api.ryukme.repl.co/api/glodls/avengers)
+>>>>>>> f64b52b38181cf02b668c68ef81d8ce860d74e4b
 all | all (it will retrieve torrent from every site) | | [/api/all/avengers](https://torrents-api.ryukme.repl.co/api/all/avengers)
 
 
