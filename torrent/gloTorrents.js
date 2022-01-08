@@ -35,6 +35,6 @@ async function glodls(query, page = '0') {
             ALLTORRENT.push(torrent);
         }
     })
-    return ALL
+    return ALLTORRENT;
 }
 module.exports = glodls
