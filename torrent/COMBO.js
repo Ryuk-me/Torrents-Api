@@ -10,6 +10,7 @@ const zooqle = require('./zooqle');
 const kickAss = require('./kickAss');
 const bitSearch = require('./bitSearch');
 const glodls = require('./gloTorrents');
+const magnet_dl = require('./magnet_dl');
 
 
 async function combo(query, page) {
@@ -26,10 +27,11 @@ async function combo(query, page) {
             zooqle.zooqle(query, page),
             kickAss(query, page),
             bitSearch(query, page),
-            glodls(query, page)
+            glodls(query, page),
+            magnet_dl(query,page)
 
         ])
-        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql, kick, bts, glo]) => {
+        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql, kick, bts, glo,mg_dl]) => {
 
             if (tgx !== null && tgx.length > 0) {
                 comboTorrent.push(tgx);
@@ -66,6 +68,9 @@ async function combo(query, page) {
             }
             if (glo !== null && glo.length > 0) {
                 comboTorrent.push(glo);
+            }
+            if (mg_dl !== null && mg_dl.length > 0) {
+                comboTorrent.push(mg_dl);
             }
         })
     return comboTorrent;

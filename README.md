@@ -1,6 +1,6 @@
 # Torrents Api ✨
 
-> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS, Torrent Galaxy, Rarbg, Zooqle, KickAss, Bitsearch, Glodls and Ettv
+> API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS, Torrent Galaxy, Rarbg, Zooqle, KickAss, Bitsearch, Glodls, MagnetDL and Ettv
 ---
 # How to install
 
@@ -40,6 +40,7 @@ Zooqle | zooqle  | https://zooqle.com | [/api/zooqle/avengers](https://torrents-
 KickAss | kickass  | https://kickasstorrents.to | [/api/kickass/avengers](https://torrents-api.ryukme.repl.co/api/kickass/avengers)
 Bitsearch | bitsearch  | https://bitsearch.to | [/api/bitsearch/avengers](https://torrents-api.ryukme.repl.co/api/bitsearch/avengers)
 Glodls | glodls  | https://glodls.to/home.php | [/api/glodls/avengers](https://torrents-api.ryukme.repl.co/api/glodls/avengers)
+MagnetDL | magnetdl  | https://www.magnetdl.com | [/api/magnetdl/avengers](https://torrents-api.ryukme.repl.co/api/magnetdl/avengers)
 all | all (it will retrieve torrent from every site) | | [/api/all/avengers](https://torrents-api.ryukme.repl.co/api/all/avengers)
 
 
