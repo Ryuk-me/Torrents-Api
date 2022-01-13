@@ -11,6 +11,9 @@ const kickAss = require('./kickAss');
 const bitSearch = require('./bitSearch');
 const glodls = require('./gloTorrents');
 const magnet_dl = require('./magnet_dl');
+const limeTorrent = require('./limeTorrent');
+const torrentFunk = require('./torrentFunk');
+const torrentProject = require('./torrentProject');
 
 
 async function combo(query, page) {
@@ -28,10 +31,13 @@ async function combo(query, page) {
             kickAss(query, page),
             bitSearch(query, page),
             glodls(query, page),
-            magnet_dl(query,page)
+            magnet_dl(query, page),
+            limeTorrent(query, page),
+            torrentFunk(query, page),
+            torrentProject(query, page)
 
         ])
-        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql, kick, bts, glo,mg_dl]) => {
+        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql, kick, bts, glo, mg_dl, lmt, tfk, tpj]) => {
 
             if (tgx !== null && tgx.length > 0) {
                 comboTorrent.push(tgx);
@@ -71,6 +77,15 @@ async function combo(query, page) {
             }
             if (mg_dl !== null && mg_dl.length > 0) {
                 comboTorrent.push(mg_dl);
+            }
+            if (lmt !== null && lmt.length > 0) {
+                comboTorrent.push(lmt);
+            }
+            if (tfk !== null && tfk.length > 0) {
+                comboTorrent.push(tfk);
+            }
+            if (tpj !== null && tpj.length > 0) {
+                comboTorrent.push(tpj);
             }
         })
     return comboTorrent;

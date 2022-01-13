@@ -14,6 +14,10 @@ const kickAss = require('./torrent/kickAss');
 const bitSearch = require('./torrent/bitSearch');
 const glodls = require('./torrent/gloTorrents');
 const magnet_dl = require('./torrent/magnet_dl');
+const limeTorrent = require('./torrent/limeTorrent');
+const torrentFunk = require('./torrent/torrentFunk');
+const torrentProject = require('./torrent/torrentProject');
+
 
 const app = express();
 
@@ -247,6 +251,57 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
                 }
             })
     }
+    if (website === 'limetorrent') {
+        limeTorrent(query, page)
+            .then((data) => {
+                if (data === null) {
+                    return res.json({
+                        error: 'Website is blocked change IP'
+                    })
+
+                } else if (data.length === 0) {
+                    return res.json({
+                        error: 'No search result available for query (' + query + ')'
+                    })
+                } else {
+                    return res.send(data);
+                }
+            })
+    }
+    if (website === 'torrentfunk') {
+        torrentFunk(query, page)
+            .then((data) => {
+                if (data === null) {
+                    return res.json({
+                        error: 'Website is blocked change IP'
+                    })
+
+                } else if (data.length === 0) {
+                    return res.json({
+                        error: 'No search result available for query (' + query + ')'
+                    })
+                } else {
+                    return res.send(data);
+                }
+            })
+    }
+    if (website === 'torrentproject') {
+        torrentProject(query, page)
+            .then((data) => {
+                if (data === null) {
+                    return res.json({
+                        error: 'Website is blocked change IP'
+                    })
+
+                } else if (data.length === 0) {
+                    return res.json({
+                        error: 'No search result available for query (' + query + ')'
+                    })
+                } else {
+                    return res.send(data);
+                }
+            })
+    }
 
     if (website === 'nyaasi') {
         if (page > 14) {
@@ -303,16 +358,16 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
             }
         })
 
-    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx' && website !== 'all' && website !== "rarbg" && website !== 'ettv' && website !== 'zooqle' && website !== 'kickass' && website !== 'bitsearch' && website !== 'glodls'&& website !== 'magnetdl') {
+    } else if (website !== 'nyaasi' && website !== '1337x' && website !== 'yts' && website !== 'piratebay' && website !== 'torlock' && website !== 'eztv' && website !== 'tgx' && website !== 'all' && website !== "rarbg" && website !== 'ettv' && website !== 'zooqle' && website !== 'kickass' && website !== 'bitsearch' && website !== 'glodls' && website !== 'magnetdl' && website !== 'limetorrent' && website !== 'torrentfunk' && website !== 'torrentproject') {
         return res.json({
-            error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv | TorrentGalaxy(tgx) | rarbg | zooqle | kickass | bitsearch | glodls | magnetdl | all (to scrap from every site)'
+            error: 'please select 1337x | nyaasi | yts | Piratebay | torlock | eztv | TorrentGalaxy(tgx) | rarbg | zooqle | kickass | bitsearch | glodls | magnetdl | limetorrent | torrentfunk | torrentproject | all (to scrap from every site)'
         })
     }
 
 });
 
 app.use('/', (req, res) => {
-    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio, TorrentGalaxy, Rarbg, Zooqle, KickAss, Bitsearch, Glodls, MagnetDL and Ettv Central Unoffical API</h1>');
+    res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio, TorrentGalaxy, Rarbg, Zooqle, KickAss, Bitsearch, Glodls, MagnetDL, Limetorrent, TorrentFunk, TorrentProject and Ettv Central Unoffical API</h1>');
 });
 const PORT = process.env.PORT || 3001;
 console.log('Listening on PORT : ', PORT);
