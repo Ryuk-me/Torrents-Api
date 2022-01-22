@@ -3,7 +3,8 @@ const axios = require('axios');
 
 async function torLock(query = '', page = '1') {
 
-    const allTorrent = [];
+    const ALLTORRENT = [];
+    const ALLURL =[]
     const url = encodeURI('https://www.torlock.com/all/torrents/' + query + '/' + page + '.html');
     let html;
     try {
@@ -14,53 +15,45 @@ async function torLock(query = '', page = '1') {
 
     const $ = cheerio.load(html.data)
 
-    const links = $('tbody tr').map((i, element) => {
-        if (i >= 5) {
-            const link = 'https://www.torlock.com' + $(element).find('td').eq(0).find('div a').attr('href')
-            return link;
+    $('.table tbody tr').each((i, element) => {
+
+        if (i > 3) {
+            let url = "https://www.torlock.com" + $(element).find('td').eq(0).find('div a').attr('href');
+            ALLURL.push(url);
+            let torrent = {
+                'Name': $(element).find('td').eq(0).find('div a b').text().trim(),
+                'Size': $(element).find('td').eq(2).text().trim(),
+                'DateUploaded': $(element).find('td').eq(1).text().trim(),
+                'Seeders': $(element).find('td').eq(3).text().trim(),
+                'Leechers': $(element).find('td').eq(4).text().trim(),
+                'Url': url
+            }
+            if (torrent.Name !== '') {
+                ALLTORRENT.push(torrent);
+            }
+        }
+    })
+
+    await Promise.all(ALLURL.map(async url => {
+        for (let i = 0; i < ALLTORRENT.length; i++) {
+            if (ALLTORRENT[i]['Url'] === url) {
+                let html;
+                try {
+                    html = await axios.get(url, headers = {
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
+                    });
+                } catch {
+                    return;
+                }
+                const $ = cheerio.load(html.data);
+                ALLTORRENT[i].Torrent = $("body > article > div:nth-child(6) > div > div:nth-child(2) > a").attr('href') || "";
+
+            }
         }
 
-    }).get();
-
-
-    await Promise.all(links.map(async (url) => {
-        let html;
-        try {
-            html = await axios.get(url);
-        } catch {
-            return null;
-        }
-        const $ = cheerio.load(html.data);
-
-        const name = $('dl.dl-horizontal').find('dd').eq(0).text().replace(/.torrent/gi, '').trim() || 'Not Available'
-        const category = $('dl.dl-horizontal').find('dd').eq(1).text().trim() || ''
-        // const torrentFile = 'https://www.torlock.com' + $('div.well').find('a[href^="/tor"]').attr('href')
-        const torrentFile = $("body > article > div:nth-child(6) > div > div:nth-child(2) > a").attr('href') || ""
-        const magnet = $('thead').find('a[href^="magnet"]').attr('href') || ""
-        const size = $('dl.dl-horizontal').find('dd').eq(3).text().trim().match(/.*B/gi)[0] || "" 
-        const date = $('dl.dl-horizontal').find('dd').eq(4).text().trim().match(/\d(.-*?)\d/gi).join('') || ""
-        const uploader = $('dl.dl-horizontal').find('dd').eq(4).text().trim().match(/"(.*?)"/g)[0].split('\"')[1] || ""
-        const seeder = $('dl.dl-horizontal').find('dd').eq(5).text().split('&').map(i => i.trim().split(' '))[0][0] || ""
-        const peers = $('dl.dl-horizontal').find('dd').eq(5).text().split('&').map(i => i.trim().split(' '))[1][0] || ""
-
-
-        let torrent = {
-            'Name': name,
-            'Category': category,
-            'Size': size,
-            'DateUploaded': date,
-            'Seeders': seeder,
-            'Leechers': peers,
-            'UploadedBy': uploader,
-            'Url': url,
-            'Torrent': torrentFile,
-            'Magnet': magnet
-
-        }
-        allTorrent.push(torrent)
     }))
 
-    return allTorrent
+    return ALLTORRENT;
 }
 
 
