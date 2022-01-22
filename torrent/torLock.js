@@ -47,6 +47,7 @@ async function torLock(query = '', page = '1') {
                 }
                 const $ = cheerio.load(html.data);
                 ALLTORRENT[i].Torrent = $("body > article > div:nth-child(6) > div > div:nth-child(2) > a").attr('href') || "";
+                ALLTORRENT[i].Magnet = $('body > article > table:nth-child(5) > thead > tr > th > div:nth-child(2) > h4 > a:nth-child(1)').attr('href');
 
             }
         }
