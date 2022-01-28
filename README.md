@@ -3,6 +3,11 @@
 > API for scraping torrents from 1337x, Piratebay, Eztv, Nyaasi, Torlock, YTS, Torrent Galaxy, Rarbg, Zooqle, KickAss, Bitsearch, Glodls, MagnetDL, LimeTorrent, TorrentFunk, TorrentProject and Ettv
 
 ---
+## A better version Available Here 
+
+## > [Torrent-Api-py](https://github.com/Ryuk-me/Torrent-Api-py)
+
+---
 
 # How to install
 
