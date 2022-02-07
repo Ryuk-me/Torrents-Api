@@ -3,7 +3,7 @@ const axios = require('axios')
 
 async function magnet_dl(query, page = '1') {
     var ALLTORRENT = [];
-    const url = `https://www.magnetdl.com/a/${query}/se/desc/${page}/`;
+    const url = `https://magnetdl.unblockninja.com/search/?q=${query}&m=${page}`;
     let html;
     try {
         html = await axios.get(url, headers = {
