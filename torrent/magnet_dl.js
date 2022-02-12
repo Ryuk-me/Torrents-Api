@@ -1,13 +1,19 @@
 const cheerio = require('cheerio')
 const axios = require('axios')
 
-async function magnet_dl(query, page = '1') {
+async function magnet_dl(query, page) {
     var ALLTORRENT = [];
-    const url = `https://magnetdl.unblockninja.com/search/?q=${query}&m=${page}`;
+    
+    if (page === '' || page === '1') {
+        var url = 'https://magnetdl.abcproxy.org/search/?q=' + query + '&m=1'
+    } else {
+        var url = 'https://magnetdl.proxyninja.org/search/?q=' + query + '&m=1'
+    }
+
     let html;
     try {
         html = await axios.get(url, headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
+            "User-Agent": "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.87 Mobile Safari/537.36"
         });
 
     } catch {
