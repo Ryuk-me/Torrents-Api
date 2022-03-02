@@ -369,6 +369,6 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
 app.use('/', (req, res) => {
     res.send('<h1>Welcome to 1337x, NyaaSi, YTS, PirateBay, Torlock, EzTvio, TorrentGalaxy, Rarbg, Zooqle, KickAss, Bitsearch, Glodls, MagnetDL, Limetorrent, TorrentFunk, TorrentProject and Ettv Central Unoffical API</h1>');
 });
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 console.log('Listening on PORT : ', PORT);
 app.listen(PORT);
