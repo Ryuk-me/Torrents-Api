@@ -19,6 +19,7 @@ async function ezTV(query) {
         const url = $(element).find('td').eq(1).find('a').attr('href') || ''
         const name = $(element).find('td').eq(1).find('a').text() || ''
         if (url !== '' || name !== '') {
+            if (!name.match((new RegExp(query.replace(/(\W|\s)/ig, '(\\W|\\s|).?'), 'ig')))) return;
             let torrent = {
                 'Name': name,
                 'Size': $(element).find('td').eq(3).text(),
