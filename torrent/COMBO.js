@@ -116,8 +116,8 @@ async function combo(query, page) {
             new Promise((resolve, _) => resolve(torrentProject(query, page)))
         ])])
         .then((comboResult) => {
-            comboTorrent = (comboResult.filter((element) => element.status === 'fulfilled'
-                && element.value?.length > 0)).map((element) => {
+            comboTorrent = (comboResult.filter((element) =>
+                element.status === 'fulfilled' && element.value && element.value.length > 0)).map((element) => {
                 return element.value
             })
         })
