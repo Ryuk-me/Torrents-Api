@@ -15,79 +15,115 @@ const limeTorrent = require('./limeTorrent');
 const torrentFunk = require('./torrentFunk');
 const torrentProject = require('./torrentProject');
 
-
 async function combo(query, page) {
     let comboTorrent = []
-    await Promise.all([
-            torrentGalaxy(query, page),
-            scrapNyaa.nyaaSI(query, page),
-            scrapYts.yts(query, page),
-            scrapPirateBay.pirateBay(query, page),
-            scrapTorLock.torLock(query, page),
-            scrapEzTVio.ezTV(query),
-            scrap1337x.torrent1337x(query, page),
-            rarbg(query, page),
-            zooqle.zooqle(query, page),
-            kickAss(query, page),
-            bitSearch(query, page),
-            glodls(query, page),
-            magnet_dl(query, page),
-            limeTorrent(query, page),
-            torrentFunk(query, page),
-            torrentProject(query, page)
+    await Promise.allSettled([
 
-        ])
-        .then(([tgx, nyaasi, yts, piratebay, torlock, eztv, x1337, rarbg, zql, kick, bts, glo, mg_dl, lmt, tfk, tpj]) => {
-
-            if (tgx !== null && tgx.length > 0) {
-                comboTorrent.push(tgx);
-            }
-            if (nyaasi !== null && nyaasi.length > 0) {
-                comboTorrent.push(nyaasi);
-            }
-            if (yts !== null && yts.length > 0) {
-                comboTorrent.push(yts);
-            }
-            if (piratebay !== null && piratebay.length > 0) {
-                comboTorrent.push(piratebay);
-            }
-            if (torlock !== null && torlock.length > 0) {
-                comboTorrent.push(torlock);
-            }
-            if (eztv !== null && eztv.length > 0) {
-                comboTorrent.push(eztv);
-            }
-            if (x1337 !== null && x1337.length > 0) {
-                comboTorrent.push(x1337);
-            }
-            if (rarbg !== null && rarbg.length > 0) {
-                comboTorrent.push(rarbg);
-            }
-            if (zql !== null && zql.length > 0) {
-                comboTorrent.push(zql);
-            }
-            if (kick !== null && kick.length > 0) {
-                comboTorrent.push(kick);
-            }
-            if (bts !== null && bts.length > 0) {
-                comboTorrent.push(bts);
-            }
-            if (glo !== null && glo.length > 0) {
-                comboTorrent.push(glo);
-            }
-            if (mg_dl !== null && mg_dl.length > 0) {
-                comboTorrent.push(mg_dl);
-            }
-            if (lmt !== null && lmt.length > 0) {
-                comboTorrent.push(lmt);
-            }
-            if (tfk !== null && tfk.length > 0) {
-                comboTorrent.push(tfk);
-            }
-            if (tpj !== null && tpj.length > 0) {
-                comboTorrent.push(tpj);
-            }
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(scrap1337x.torrent1337x(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(scrapYts.yts('query', 1)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(limeTorrent(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(torrentGalaxy(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(rarbg(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(zooqle.zooqle(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(kickAss(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(scrapTorLock.torLock(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(scrapNyaa.nyaaSI(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(bitSearch(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(scrapEzTVio.ezTV(query)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(scrapPirateBay.pirateBay(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(magnet_dl(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(torrentFunk(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(glodls(query, page)))
+        ]),
+        Promise.race([new Promise((_, reject) => (
+            setTimeout(() => {
+                reject({code:408,message:'Timeout exceeded'})
+            },10000 ))),
+            new Promise((resolve, _) => resolve(torrentProject(query, page)))
+        ])])
+        .then((comboResult) => {
+            comboTorrent = (comboResult.filter((element)=>element.status === 'fulfilled'
+                && element.value?.length>0)).map((element) => {
+                return element.value
+            })
         })
+        .catch(err=>console.log(err))
+
     return comboTorrent;
 }
+
 module.exports = combo;
