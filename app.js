@@ -27,7 +27,7 @@ app.use('/api/:website/:query/:page?', (req, res, next) => {
     let website = (req.params.website).toLowerCase();
     let query = req.params.query;
     let page = req.params.page;
-
+    console.log({website : website ,query : query ,page :page});
     if (website === '1337x') {
         if (page > 50) {
             return res.json({
