@@ -16,7 +16,7 @@ const torrentFunk = require('./torrentFunk');
 const torrentProject = require('./torrentProject');
 
 async function combo(query, page) {
-    let comboTorrent = [], timeout = 10000 //wait time before rejecting promised results
+    let comboTorrent = [], timeout = 8000 //wait time before rejecting promised results
     await Promise.allSettled([
 
         Promise.race([new Promise((_, reject) => (
